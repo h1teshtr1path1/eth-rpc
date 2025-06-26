@@ -1,0 +1,21 @@
+{
+  "canisters": {
+    "eth_rpc_backend": {
+      "candid": "eth_rpc_backend.did",
+      "package": "eth_rpc_backend",
+      "type": "rust"
+    },
+    "evm_rpc": {
+      "type": "pull",
+      "id": "7hfb6-caaaa-aaaar-qadga-cai"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

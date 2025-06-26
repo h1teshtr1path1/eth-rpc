@@ -1,0 +1,4 @@
+service : {
+  send_transfer_transaction: () -> (text);
+  get_cycle_balance: () -> (nat64) query;
+};

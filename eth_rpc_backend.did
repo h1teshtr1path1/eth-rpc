@@ -1,4 +1,5 @@
 service : {
-  send_transfer_transaction: () -> (text);
+  send_signed_transfer: () -> (text);
   get_cycle_balance: () -> (nat64) query;
+  get_address_nonce_gas: () -> (text);
 };

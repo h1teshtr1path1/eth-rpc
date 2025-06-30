@@ -1,5 +1,22 @@
+type SendRawTransactionStatus = variant {
+  Ok: opt text;
+  NonceTooLow;
+  NonceTooHigh;
+  InsufficientFunds;
+};
+
+type SendRawTransactionResult = variant {
+  Ok: SendRawTransactionStatus;
+  Err: text;
+};
+
+type MultiSendRawTransactionResult = variant {
+  Consistent: SendRawTransactionResult;
+  Inconsistent: vec record { text; SendRawTransactionResult };
+};
+
 service : {
-  send_signed_transfer: () -> (text);
+  send_signed_transfer: () -> (variant { Ok: MultiSendRawTransactionResult; Err: text });
   get_cycle_balance: () -> (nat64) query;
   get_address_nonce_gas: () -> (text);
 };

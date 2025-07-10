@@ -16,7 +16,7 @@ type MultiSendRawTransactionResult = variant {
 };
 
 service : {
-  send_signed_transfer: () -> (variant { Ok: MultiSendRawTransactionResult; Err: text });
+  send_signed_transfer: () -> (variant { Ok: text; Err: text });
   get_cycle_balance: () -> (nat64) query;
   get_address_nonce_gas: () -> (text);
 };
